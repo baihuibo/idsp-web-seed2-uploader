@@ -49,6 +49,7 @@ mod.directive("uploader", function () {
                 scope.$applyAsync(function () {
                     scope.fileQueued({$file});
                     let file = {
+                        id: $file.id,
                         name: $file.name,
                         size: $file.size,
                         sizeUnit: WebUploader.formatSize($file.size),
