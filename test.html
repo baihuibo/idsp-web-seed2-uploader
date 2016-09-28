@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bundle/test.bundle.css">
+    <style>
+    </style>
+</head>
+<body>
+
+<uploader option="option"
+          files="files"
+          file-queued="queued($file)"
+          upload-before-send="beforeSend($chuck , $data , $headers)">选择文件
+</uploader>
+
+<pre>
+file.name = {{file.name}}
+file.size = {{file.size}}
+file.type = {{file.type}}
+files = {{files}}
+</pre>
+
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/angular/angular.js"></script>
+<script src="bundle/test.bundle.js"></script>
+</body>
+</html>

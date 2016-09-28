@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "allowUnusedLabels": true
+  },
+  "files": [
+    "typings/tsd.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

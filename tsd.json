@@ -1,0 +1,39 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "angularjs/angular.d.ts": {
+      "commit": "084e55916674ff7128722bf72150aa55acea08d9"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "084e55916674ff7128722bf72150aa55acea08d9"
+    },
+    "core-js/core-js.d.ts": {
+      "commit": "5d1623c5cce5a01f8e55dece86e06fe2c32dc763"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "5d1623c5cce5a01f8e55dece86e06fe2c32dc763"
+    },
+    "mocha/mocha.d.ts": {
+      "commit": "1b21ed5d2ed3afb3b2be9a3ef8b17ae2a52a4c27"
+    },
+    "sinon/sinon.d.ts": {
+      "commit": "1b21ed5d2ed3afb3b2be9a3ef8b17ae2a52a4c27"
+    },
+    "chai/chai.d.ts": {
+      "commit": "1b21ed5d2ed3afb3b2be9a3ef8b17ae2a52a4c27"
+    },
+    "assertion-error/assertion-error.d.ts": {
+      "commit": "1b21ed5d2ed3afb3b2be9a3ef8b17ae2a52a4c27"
+    },
+    "node/node.d.ts": {
+      "commit": "1b21ed5d2ed3afb3b2be9a3ef8b17ae2a52a4c27"
+    },
+    "angularjs/angular-mocks.d.ts": {
+      "commit": "084e55916674ff7128722bf72150aa55acea08d9"
+    }
+  }
+}
