@@ -53,6 +53,7 @@ mod.directive("uploader", function () {
                         size: $file.size,
                         sizeUnit: WebUploader.formatSize($file.size),
                         percentage: 0,
+                        state: 'ready',
                         $$file: $file
                     };
                     $file._file = $file;
@@ -68,6 +69,7 @@ mod.directive("uploader", function () {
             });
             uploader.on('uploadStart', function ($file) {
                 scope.$applyAsync(function () {
+                    $file._file.state = 'uploading';
                     scope.uploadStart({$file});
                 });
             });
@@ -91,6 +93,7 @@ mod.directive("uploader", function () {
                 scope.$applyAsync(function () {
                     scope.uploadSuccess({$file, $response});
                     $file._file.response = $response;
+                    $file._file.state = 'success';
                 });
             });
             uploader.on('error', function ($type) {
