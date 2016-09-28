@@ -57,7 +57,7 @@ mod.directive("uploader", function () {
                         state: 'ready',
                         $$file: $file
                     };
-                    $file._file = $file;
+                    $file._file = file;
                     files.push(file);
                 });
             });
