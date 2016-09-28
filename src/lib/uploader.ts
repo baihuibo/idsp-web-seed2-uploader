@@ -27,18 +27,16 @@ mod.directive("uploader", function () {
         link (scope: any, el, attr) {
             let option: UploaderOption = scope.option = scope.option || {};
             let files = scope.files = scope.files || [];
-
             let uploader = option.uploader = WebUploader.create({
                 dnd: option.dnd, // dnd容器
                 disableGlobalDnd: !!option.dnd,
                 swf,
-                duplicate: true, // 文件去重
                 auto: option.auto,
                 method: option.method || 'post',
                 formData: option.formData || {}, // 发送额外数据
                 fileVal: option.name || 'file', // 上传域name
                 server: option.server || 'fileupload.php',
-                paste: option.dnd ? document.body : void 0,
+                paste: !!option.dnd ? document : void 0,
                 pick: {
                     id: el.get(0),
                     multiple: option.multiple
