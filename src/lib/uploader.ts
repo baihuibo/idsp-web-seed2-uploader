@@ -1,3 +1,4 @@
+///<reference path="../../typings/typings.d.ts"/>
 // Created by baihuibo on 16/9/13.
 import {module} from "angular";
 import "webuploader/dist/webuploader.css";
