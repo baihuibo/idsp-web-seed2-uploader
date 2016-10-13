@@ -1,5 +1,14 @@
 // Created by baihuibo on 2016/9/28.
 
+interface UploadFile {
+    name: string
+    size: number
+    id: string
+    sizeUnit: string
+    percentage: number
+    state: 'ready' | 'uploading' | 'success'
+    $$file: Object
+}
 
 interface UploaderOption {
     /** webuploader 的实例对象 */
