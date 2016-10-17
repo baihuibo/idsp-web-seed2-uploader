@@ -6,6 +6,7 @@ interface UploadFile {
     id: string
     sizeUnit: string
     percentage: number
+    response: any
     state: 'ready' | 'uploading' | 'success'
     $$file: Object
 }

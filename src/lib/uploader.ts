@@ -1,4 +1,4 @@
-///<reference path="../../typings/typings.d.ts"/>
+///<reference path="../../typings/uploader.d.ts"/>
 // Created by baihuibo on 16/9/13.
 import {module} from "angular";
 import "webuploader/dist/webuploader.css";
@@ -55,6 +55,7 @@ mod.directive("uploader", function () {
                         size: $file.size,
                         sizeUnit: WebUploader.formatSize($file.size),
                         percentage: 0,
+                        response : null,
                         state: 'ready',
                         $$file: $file
                     };
