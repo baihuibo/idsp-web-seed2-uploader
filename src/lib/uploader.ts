@@ -47,6 +47,12 @@ mod.directive("uploader", function () {
             });
 
             uploader.on('fileQueued', function ($file) {
+                if (option.multiple == false) {
+                    // 如果是单选模式
+                    files.forEach(file => uploader.removeFile(file.$$file, true));
+                    files.length = 0;
+                }
+
                 scope.$applyAsync(function () {
                     scope.fileQueued({$file});
                     let file = {
@@ -55,7 +61,7 @@ mod.directive("uploader", function () {
                         size: $file.size,
                         sizeUnit: WebUploader.formatSize($file.size),
                         percentage: 0,
-                        response : null,
+                        response: null,
                         state: 'ready',
                         $$file: $file
                     };

@@ -7,8 +7,9 @@ const app = module('app', [uploader]);
 app.run(function ($rootScope) {
 
     $rootScope.option = {
-        auto: true,
-        dnd: 'body'
+        auto: false,
+        dnd: 'body',
+        multiple : false
     };
 
     $rootScope.beforeSend = function (file, data, headers) {

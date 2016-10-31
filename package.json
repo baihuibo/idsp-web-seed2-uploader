@@ -1,6 +1,6 @@
 {
   "name": "idsp-web-seed2-uploader",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "",
   "main": "src/lib/uploader.ts",
   "scripts": {
