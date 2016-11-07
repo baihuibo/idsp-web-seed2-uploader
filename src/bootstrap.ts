@@ -9,7 +9,8 @@ app.run(function ($rootScope) {
     $rootScope.option = {
         auto: false,
         dnd: 'body',
-        multiple : false
+        multiple: false,
+        fileSingleSizeLimit: 1000 * 10 // 10kb
     };
 
     $rootScope.beforeSend = function (file, data, headers) {
@@ -17,8 +18,14 @@ app.run(function ($rootScope) {
     };
 
     $rootScope.queued = function (file) {
-        console.log(file);
+        console.log('queued', file);
         $rootScope.file = file;
+    };
+
+    $rootScope.error = function (type) {
+        // F_EXCEED_SIZE  文件大小超过
+        // Q_TYPE_DENIED  文件类型不匹配
+        console.warn('error', type);
     };
 });
 

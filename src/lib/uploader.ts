@@ -54,7 +54,6 @@ mod.directive("uploader", function () {
                 }
 
                 scope.$applyAsync(function () {
-                    scope.fileQueued({$file});
                     let file = {
                         id: $file.id,
                         name: $file.name,
@@ -67,13 +66,14 @@ mod.directive("uploader", function () {
                     };
                     $file._file = file;
                     files.push(file);
+                    scope.fileQueued({$file});
                 });
             });
             uploader.on('fileDequeued', function ($file) {
                 scope.$applyAsync(function () {
-                    scope.fileDequeued({$file});
                     let idx = files.indexOf($file._file);
                     idx > -1 && files.splice(idx, 1);
+                    scope.fileDequeued({$file});
                 });
             });
             uploader.on('uploadStart', function ($file) {
@@ -89,8 +89,8 @@ mod.directive("uploader", function () {
             });
             uploader.on('uploadProgress', function ($file, $percentage) {
                 scope.$applyAsync(function () {
-                    scope.uploadProgress({$file, $percentage});
                     $file._file.percentage = $percentage * 100;
+                    scope.uploadProgress({$file, $percentage});
                 });
             });
             uploader.on('uploadError', function ($file, $error) {
@@ -100,9 +100,9 @@ mod.directive("uploader", function () {
             });
             uploader.on('uploadSuccess', function ($file, $response) {
                 scope.$applyAsync(function () {
-                    scope.uploadSuccess({$file, $response});
                     $file._file.response = $response;
                     $file._file.state = 'success';
+                    scope.uploadSuccess({$file, $response});
                 });
             });
             uploader.on('error', function ($type) {
