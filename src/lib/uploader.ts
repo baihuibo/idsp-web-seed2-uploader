@@ -25,7 +25,8 @@ mod.directive("uploader", function () {
             uploadSuccess: '&',
             error: '&'
         },
-        link (scope: any, el, attr) {
+        require: '^?submitUploader',
+        link (scope: any, el, attr, ctrl) {
             let option: UploaderOption = scope.option = scope.option || {};
             let files = scope.files = scope.files || [];
             let uploader = option.uploader = WebUploader.create({
@@ -111,7 +112,10 @@ mod.directive("uploader", function () {
                 });
             });
 
+            ctrl && ctrl.register(uploader);
+
             scope.$on('$destroy', function () {
+                ctrl && ctrl.unRegister(uploader);
                 uploader.destroy();
                 uploader = null;
                 files = null;
