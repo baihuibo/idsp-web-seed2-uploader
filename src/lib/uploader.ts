@@ -46,6 +46,12 @@ mod.directive("uploader", function () {
                 accept: option.accept,
                 fileSingleSizeLimit: option.fileSingleSizeLimit
             });
+            const modal = el.closest('.modal');
+            if (modal.length) {
+                modal.on('shown.bs.modal' , function () {
+                    uploader['refresh']();
+                });
+            }
 
             uploader.on('fileQueued', function ($file) {
                 if (option.multiple == false) {
