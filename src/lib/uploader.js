@@ -22,6 +22,7 @@ exports.mod.directive("uploader", function () {
             uploadProgress: '&',
             uploadError: '&',
             uploadSuccess: '&',
+            uploadFinished: '&',
             error: '&'
         },
         require: '^?submitUploader',
@@ -107,6 +108,11 @@ exports.mod.directive("uploader", function () {
                     $file._file.response = $response;
                     $file._file.state = 'success';
                     scope.uploadSuccess({ $file: $file, $response: $response });
+                });
+            });
+            uploader.on('uploadFinished', function () {
+                scope.$applyAsync(function () {
+                    scope.uploadFinished();
                 });
             });
             uploader.on('error', function ($type) {

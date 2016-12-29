@@ -66,14 +66,3 @@ export interface Uploader {
     stop(flag: boolean | any)
     cancelFile(file)
 }
-
-declare module "webuploader" {
-    export function create(UploaderOption?): Uploader;
-
-    export function formatSize(size, pointLength?, units?): string;
-}
-
-declare module "webuploader/dist/Uploader.swf" {
-    let swfPath: string;
-    export default swfPath;
-}

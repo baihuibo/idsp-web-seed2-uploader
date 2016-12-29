@@ -1,8 +1,8 @@
 {
   "name": "idsp-web-seed2-uploader",
-  "version": "1.0.14",
+  "version": "1.0.17",
   "description": "",
-  "main": "src/lib/uploader.ts",
+  "main": "src/lib/uploader.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "builds": "webpack --watch",
