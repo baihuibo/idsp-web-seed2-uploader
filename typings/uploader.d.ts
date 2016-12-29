@@ -1,6 +1,6 @@
 // Created by baihuibo on 2016/9/28.
 
-interface UploadFile {
+export interface UploadFile {
     name: string
     size: number
     id: string
@@ -11,7 +11,7 @@ interface UploadFile {
     $$file: Object
 }
 
-interface UploaderOption {
+export interface UploaderOption {
     /** webuploader 的实例对象 */
     uploader?: Uploader
 
@@ -52,7 +52,7 @@ interface UploaderOption {
     fileSingleSizeLimit?: number
 }
 
-interface Uploader {
+export interface Uploader {
     on(name: string, cb?: (...args)=>any): void
     destroy()
     getStats()
