@@ -51,7 +51,7 @@ mod.directive("uploader", function () {
             const modal = el.closest('.modal');
             if (modal.length) {
                 modal.on('shown.bs.modal' , function () {
-                    uploader['refresh']();
+                    uploader && uploader['refresh']();
                 });
             }
 

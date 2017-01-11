@@ -49,7 +49,7 @@ exports.mod.directive("uploader", function () {
             var modal = el.closest('.modal');
             if (modal.length) {
                 modal.on('shown.bs.modal', function () {
-                    uploader['refresh']();
+                    uploader && uploader['refresh']();
                 });
             }
             uploader.on('fileQueued', function ($file) {
