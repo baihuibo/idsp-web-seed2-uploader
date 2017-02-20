@@ -58,7 +58,7 @@ mod.directive("uploader", function () {
             uploader.on('fileQueued', function ($file) {
                 if (option.multiple == false) {
                     // 如果是单选模式
-                    files.forEach(file => uploader.removeFile(file.$$file, true));
+                    files.forEach(({$$file}) => $$file && uploader.removeFile($$file, true));
                     files.length = 0;
                 }
 

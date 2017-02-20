@@ -55,7 +55,10 @@ exports.mod.directive("uploader", function () {
             uploader.on('fileQueued', function ($file) {
                 if (option.multiple == false) {
                     // 如果是单选模式
-                    files.forEach(function (file) { return uploader.removeFile(file.$$file, true); });
+                    files.forEach(function (_a) {
+                        var $$file = _a.$$file;
+                        return $$file && uploader.removeFile($$file, true);
+                    });
                     files.length = 0;
                 }
                 scope.$applyAsync(function () {
